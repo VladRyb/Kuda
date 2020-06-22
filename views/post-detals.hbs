@@ -1,0 +1,51 @@
+<script defer src="/js/post.js"></script>
+
+<div class="d-flex justify-content-center">
+  <div style="width: 40%;">
+    <h2>{{post.title}}</h2>
+    <p>{{post.body}}</p>
+    <p>Date: {{post.date}}</p>
+    <p>Time: {{post.time}}</p>
+    {{#if checkUser}}
+    <script defer src="/js/delete.js"></script>
+    <input id="delete" type="button" class="btn btn-danger" value="Отписаться">
+    {{else}}
+    <script defer src="/js/visit.js"></script>
+    <input id="button" type="button" class="btn btn-primary" value="Посетить">
+    {{/if}}
+    <p id="check"></p>
+    <p><span id="like" class="badge badge-dark"> ♡ {{post.likes.length}}</span></p>
+  </div>
+  <div id="map" style="width: 400px; height: 400px;"></div>
+</div>
+
+<form id="comment" action="/post-detals/comment" method="POST">
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">New comments</label>
+    <textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <input type="submit" class="btn btn-primary" value="Submit">
+</form>
+
+<div class="d-flex justify-content-center">
+  <h2>Comments</h2>
+</div>
+<div id="comments">
+  {{#each comment}}
+  <div name="{{this._id}}" class="card">
+    <div class="card-header">
+      {{this.autor}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{this.body}}</h5>
+      <span class="badge badge-pill badge-secondary">{{this.date}}</span>
+      <p>
+        <span id="commDel">
+          <a id="{{this._id}}" href="/post-detals/comment/delete" class="badge badge-danger">Удалить</a>
+        </span>
+
+      </p>
+    </div>
+  </div>
+  {{/each}}
+</div>

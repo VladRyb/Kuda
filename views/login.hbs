@@ -1,0 +1,29 @@
+<form action="/login" method="POST">
+  <div class="form-group mx-auto " style="width: 30%;">
+    <label for="inlineFormInput" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control {{valid.user}}" name="username">
+      <div class="invalid-feedback">
+        {{status}}
+      </div>
+    </div>
+  </div>
+  <div class="form-group mx-auto" style="width: 30%;">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" name="password">
+    </div>
+  </div>
+  <div class="form-group mx-auto" style="width: 30%;">
+    <div class="col-sm-10">
+    </div>
+  </div>
+  <div class="form-group mx-auto" style="width: 30%;">
+    <div class="col-sm-10">
+      <input class="btn btn-primary" type="submit" value="Sign Up" />
+      <a class="btn btn-primary" href="/auth/google"><img id="googleimg"
+          src="/img/1492616990-1-google-search-logo-engine-service-suits_83412.png" alt="">
+        Sign In with Google</a>
+    </div>
+  </div>
+</form>

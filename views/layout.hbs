@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Login Here</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=a8fad5c6-0b3c-4bf5-a225-99bb4b3e94b0&lang=ru_RU"
+    type="text/javascript"></script>
+
+
+
+
+
+
+</head>
+<div class="page-header d-flex justify-content-center">
+  <h1><span class="badge badge-secondary">Project</span> </h1>
+</div>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <button id="mapButt" type="button" class="btn btn-dark">Map</button>
+        </li>
+      </ul>
+    </div>
+    <div class="d-flex justify-content-end">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          {{#if user}}
+          <a class="nav-link dropdown-toggle" href="/user" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{user.username}}
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/user">Profile</a>
+            <a class="dropdown-item" href="/logout">Log Out</a>
+          </div>
+        </li>
+        {{else}}
+        <li class="nav-item ">
+          <a class="nav-link" href="/signup">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+
+  </nav>
+
+  {{{body}}}
+</body>
+
+</html>

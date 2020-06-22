@@ -1,0 +1,26 @@
+<a href="/user/update" class="btn btn-primary">Update data</a>
+
+<div>
+  <div class="d-flex justify-content-between" style="width: 400px;">
+    <h2>Name:</h2>
+    <h2>{{user.username}}</h2>
+  </div>
+  <div class="d-flex justify-content-between" style="width: 400px;">
+    <h4>Email:</h4>
+    <h4>{{user.email}}</h4>
+  </div>
+  <div class="d-flex justify-content-between" style="width: 400px;">
+    <h4>Phone:</h4>
+    <h4>{{user.phone}}</h4>
+  </div>
+
+  <div>
+    <div>You Channel: </div>
+    {{#each user.posts}}
+
+    <span>
+      <button type="button" class="btn btn-outline-primary"><a href="/post-detals/{{_id}}">{{title}}</a></button>
+    </span>
+    {{/each}}
+  </div>
+</div>

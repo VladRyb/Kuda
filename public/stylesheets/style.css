@@ -1,0 +1,12 @@
+label {
+  display: block;
+}
+
+#like {
+  cursor: pointer;
+}
+
+#googleimg {
+  width: 20px;
+  height: 20px;
+}

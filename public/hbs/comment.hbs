@@ -1,0 +1,17 @@
+<div name="{{this._id}}" class="card">
+  <div class="card-header">
+    {{this.autor}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{this.body}}</h5>
+    <span class="badge badge-pill badge-secondary">{{this.date}}</span>
+    <p>
+      <span id="commDel">
+        <a id="{{this._id}}" href="/post-detals/comment/delete" class="badge badge-danger">Удалить</a>
+      </span>
+      <span>
+        <a id="{{this._id}}" href="/post-detals/comment/edit" class="badge badge-warning">Изменить</a>
+      </span>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<script defer src="/js/maps.js"></script>
+<h1 class="d-flex justify-content-center">{{title}}</h1>
+<p class="d-flex justify-content-center">Welcome</p>
+
+<div class="d-flex justify-content-center">
+  <div id="map" style="width: 80%; height: 200px; display: none;"></div>
+</div>
+
+<div class="d-flex align-content-center flex-wrap justify-content-around">
+  {{#each post}}
+  <div class="card">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{this.title}}</h4>
+      <p class="card-text">{{this.body}}</p>
+      <a href="post-detals/{{this._id}}" class="btn btn-primary">Detals</a>
+    </div>
+  </div>
+  {{/each}}
+</div>
